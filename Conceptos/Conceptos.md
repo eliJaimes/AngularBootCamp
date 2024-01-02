@@ -31,3 +31,22 @@ Presentan:
 &nbsp;
 
 ###### **Enero 2024**
+
+---
+
+<!-- •••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••
+
+	Qué es Angular
+
+••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••• -->
+
+<!-- _class: invert title_with_image -->
+
+## Qué es &nbsp;![width:350px](./Imágenes/Angular%20logo.png)
+
+&nbsp;
+
+- Es un web framework que permite simplificar y optimizar el desarrollo de aplicaciones rápidas y confiables.
+- Proporciona un amplio conjunto de herramientas, API y bibliotecas.
+- Mantiene el código organizado con un modelo de componente y un sistema de inyección de dependencias flexible.
+- Aplicaciones confiables que escalan con el tamaño dee equipo y el tamaño del código fuente.
