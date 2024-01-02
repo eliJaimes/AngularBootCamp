@@ -105,3 +105,18 @@ Presentan:
 ---
 
 ![width:1050px](./Imágenes/Hello,%20AngularBootCamp.png)
+
+<!-- •••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••
+
+	Herramientas para el desarrollo en Angular
+
+••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••• -->
+
+---
+
+## Herramientas para el desarrollo en Angular
+
+- Visual Studio Code, https://code.visualstudio.com/
+- Angular Language Service, https://marketplace.visualstudio.com/items?itemName=Angular.ng-template
+- angular2-inline, https://marketplace.visualstudio.com/items?itemName=natewallace.angular2-inline
+- angular2-switcher, https://marketplace.visualstudio.com/items?itemName=infinity1207.angular2-switcher
