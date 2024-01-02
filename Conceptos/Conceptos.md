@@ -81,3 +81,27 @@ Presentan:
 ---
 
 ![width:1050px](./Imágenes/Create%20application.png)
+
+<!-- •••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••
+
+	Ejecutar la aplicación Angular
+
+••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••• -->
+
+---
+
+## Ejecutar la aplicación Angular
+
+- Para ejecutar la aplicación podemos hacer uso de los scripts en _package.json_
+
+![width:550px](./Imágenes/package.json%20scripts.png)
+
+&nbsp;
+
+| `npm start`                                | `ng serve`                                 |
+| ------------------------------------------ | ------------------------------------------ |
+| ![width:500px](./Imágenes/npm%20start.png) | ![width:500px](./Imágenes/npm%20start.png) |
+
+---
+
+![width:1050px](./Imágenes/Hello,%20AngularBootCamp.png)
