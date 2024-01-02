@@ -163,3 +163,58 @@ Presentan:
 `ng g m MyFistModule -m app --routing -d`
 
 https://angular.io/cli/generate#module-command
+
+---
+
+- **Directives**, (directivas): es una clase decorada con anotación _@Directive_. Su propósito es agregar cierto comportamiento a elementos en la aplicación Angular.
+
+&nbsp;
+
+![width:1050px](./Imágenes/Angular%20Directive.png)
+
+---
+
+<!-- _class: invert p_left -->
+
+### Directivas
+
+`ng generate directive MyFistDirective --module my-fist-module --dry-run`
+
+`ng g d MyFistDirective -m my-fist-module.module -d`
+
+https://angular.io/cli/generate#directive-command
+
+---
+
+<!-- _class: invert p_left -->
+
+https://angular.io/guide/built-in-directives
+
+Existen 3 tipos de directivas en Angular:
+
+&nbsp;
+&nbsp;
+
+- **Attribute directive**, (Directiva de atributos): cambian la apariencia o el comportamiento de un elemento, componente u otra directiva. https://angular.io/guide/built-in-directives#built-in-attribute-directives
+  &nbsp;
+  - _NgClass_: Agrega y elimina un conjunto de clases de CSS.
+  - _NgStyle_: Agrega y elimina un conjunto de estilos HTML.
+  - _NgModel_: Agrega _two-way data binding_ (datos vinculados en ambos sentidos) a un elemento de formulario HTML.
+
+---
+
+- **Structural directives**, (Directivas estructurales): Cambie la estructura DOM agregando y eliminando elementos DOM.
+  https://angular.io/guide/built-in-directives#built-in-structural-directives
+  &nbsp;
+  - _NgIf_: Condicionalmente crea o elimina las sub vistas en la plantilla.
+  - _NgFor_: Repite un nodo para cada elemento en una lista.
+  - _NgSwitch_: Un conjunto de directivas que cambian entre vistas alternativas.
+
+---
+
+- **Components**, (Componentes): Usado con una plantilla.Este tipo de directiva es el tipo de directiva más común. Los componentes son los principales bloques de construcción para aplicaciones Angular.
+  https://angular.io/guide/component-overview
+
+&nbsp;
+
+![width:500px](./Imágenes/Lego%20blocks.png)
