@@ -1,18 +1,15 @@
-import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
+/* ••[1]••••••••••••••••••••••••• app.module.ts •••••••••••••••••••••••••••••• */
 
-import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { AppRoutingModule } from './app-routing.module';
+import { BrowserModule } from '@angular/platform-browser';
+import { MyFistModuleModule } from './my-fist-module/my-fist-module.module';
+import { NgModule } from '@angular/core';
 
 @NgModule({
-  declarations: [
-    AppComponent
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule
-  ],
+  bootstrap: [AppComponent],
+  declarations: [AppComponent],
+  imports: [BrowserModule, AppRoutingModule, MyFistModuleModule],
   providers: [],
-  bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}

@@ -137,3 +137,29 @@ Presentan:
 - ESLint, https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint
 - Prettier - Code formatter, https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode, `npm i -D prettier`
 - Todo Tree, https://marketplace.visualstudio.com/items?itemName=Gruntfuggly.todo-tree
+
+<!-- •••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••
+
+	Bloques de Construcción en Angular
+
+••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••• -->
+
+---
+
+## Bloques de Construcción en Angular
+
+- **Modules**, (módulos): declaran el _contexto de compilación_ para un conjunto de **componentes** relacionados y dedicados a alguna característica. _Agrupación de **componentes**, **tuberías** y **directivas** relacionadas_. Ayudan al compilador de Angular a resolver correctamente los componentes y unirlos a los elementos DOM apropiados en sus plantillas.
+
+![width:700px](./Imágenes/Angular%20Module.png)
+
+---
+
+<!-- _class: invert p_left -->
+
+### Módulos
+
+`ng generate module MyFistModule --module app --routing --dry-run`
+
+`ng g m MyFistModule -m app --routing -d`
+
+https://angular.io/cli/generate#module-command
