@@ -50,3 +50,34 @@ Presentan:
 - Proporciona un amplio conjunto de herramientas, API y bibliotecas.
 - Mantiene el código organizado con un modelo de componente y un sistema de inyección de dependencias flexible.
 - Aplicaciones confiables que escalan con el tamaño dee equipo y el tamaño del código fuente.
+
+---
+
+<!-- •••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••
+
+	Angular CLI
+
+••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••• -->
+
+## Angular CLI (Command-Line Interface)
+
+- Se utiliza para _inicializar_, _desarrollar_ y _mantener_ aplicaciones Angular directamente desde un shell de comandos.
+- Instale el CLI utilizando NPM (Node Package Manager)
+
+`npm install -g @angular/cli`
+
+- Invoca la herramienta en la línea de comando a través del ejecutable _ng_.
+
+`ng --help`
+
+- Crearemos la aplicación que utilizaremos a lo largo del curso
+
+`ng new AngularBootCamp --standalone false --skip-git --dry-run`
+
+`ng new AngularBootCamp --standalone -g -d`
+
+- https://angular.io/cli
+
+---
+
+![width:1050px](./Imágenes/Create%20application.png)
