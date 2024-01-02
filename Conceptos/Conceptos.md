@@ -120,3 +120,20 @@ Presentan:
 - Angular Language Service, https://marketplace.visualstudio.com/items?itemName=Angular.ng-template
 - angular2-inline, https://marketplace.visualstudio.com/items?itemName=natewallace.angular2-inline
 - angular2-switcher, https://marketplace.visualstudio.com/items?itemName=infinity1207.angular2-switcher
+
+<!-- •••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••
+
+	Herramientas para desarrollo Web
+
+••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••• -->
+
+---
+
+## Herramientas para desarrollo Web
+
+- Bookmarks, https://marketplace.visualstudio.com/items?itemName=alefragnani.Bookmarks
+- Code Spell Checker, https://marketplace.visualstudio.com/items?itemName=streetsidesoftware.code-spell-checker
+- Error Lens, https://marketplace.visualstudio.com/items?itemName=usernamehw.errorlens
+- ESLint, https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint
+- Prettier - Code formatter, https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode, `npm i -D prettier`
+- Todo Tree, https://marketplace.visualstudio.com/items?itemName=Gruntfuggly.todo-tree
