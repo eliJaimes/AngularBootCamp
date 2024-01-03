@@ -36,13 +36,13 @@ Presentan:
 
 <!-- •••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••
 
-	Qué es Angular
+	1. ¿Qué es Angular?
 
 ••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••• -->
 
 <!-- _class: invert title_with_image -->
 
-## Qué es &nbsp;![width:350px](./Imágenes/Angular%20logo.png)
+## 1. ¿Qué es &nbsp;![width:350px](./Imágenes/Angular%20logo.png)?
 
 &nbsp;
 
@@ -55,11 +55,11 @@ Presentan:
 
 <!-- •••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••
 
-	Angular CLI
+	2. Angular CLI (Command-Line Interface)
 
 ••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••• -->
 
-## Angular CLI (Command-Line Interface)
+## 2. Angular CLI (Command-Line Interface)
 
 - Se utiliza para _inicializar_, _desarrollar_ y _mantener_ aplicaciones Angular directamente desde un shell de comandos.
 - Instale el CLI utilizando NPM (Node Package Manager)
@@ -84,13 +84,13 @@ Presentan:
 
 <!-- •••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••
 
-	Ejecutar la aplicación Angular
+	3. Ejecutar la aplicación Angular
 
 ••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••• -->
 
 ---
 
-## Ejecutar la aplicación Angular
+## 3. Ejecutar la aplicación Angular
 
 - Para ejecutar la aplicación podemos hacer uso de los scripts en _package.json_
 
@@ -108,13 +108,13 @@ Presentan:
 
 <!-- •••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••
 
-	Herramientas para el desarrollo en Angular
+	4. Herramientas para el desarrollo en Angular
 
 ••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••• -->
 
 ---
 
-## Herramientas para el desarrollo en Angular
+## 4. Herramientas para el desarrollo en Angular
 
 - Visual Studio Code, https://code.visualstudio.com/
 - Angular Language Service, https://marketplace.visualstudio.com/items?itemName=Angular.ng-template
@@ -123,13 +123,13 @@ Presentan:
 
 <!-- •••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••
 
-	Herramientas para desarrollo Web
+	5. Herramientas para desarrollo Web
 
 ••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••• -->
 
 ---
 
-## Herramientas para desarrollo Web
+## 5. Herramientas para desarrollo Web
 
 - Bookmarks, https://marketplace.visualstudio.com/items?itemName=alefragnani.Bookmarks
 - Code Spell Checker, https://marketplace.visualstudio.com/items?itemName=streetsidesoftware.code-spell-checker
@@ -146,7 +146,7 @@ Presentan:
 
 ---
 
-## Bloques de Construcción en Angular
+## 6. Bloques de Construcción en Angular
 
 - **Modules**, (módulos): declaran el _contexto de compilación_ para un conjunto de **componentes** relacionados y dedicados a alguna característica. _Agrupación de **componentes**, **tuberías** y **directivas** relacionadas_. Ayudan al compilador de Angular a resolver correctamente los componentes y unirlos a los elementos DOM apropiados en sus plantillas.
 
@@ -156,7 +156,7 @@ Presentan:
 
 <!-- _class: invert p_left -->
 
-### Módulos
+### 6.1 Módulos
 
 `ng generate module MyFirstModule --module app --routing --dry-run`
 
@@ -176,7 +176,7 @@ https://angular.io/cli/generate#module-command
 
 <!-- _class: invert p_left -->
 
-### Directivas
+### 6.2 Directivas
 
 `ng generate directive directives/MyFirstDirective --module my-first-module --dry-run`
 
@@ -223,7 +223,7 @@ Existen 3 tipos de directivas en Angular:
 
 <!-- _class: invert p_left -->
 
-### Componentes
+### 6.3 Componentes
 
 Es un tipo especial de directiva que tiene su propia plantilla y estilos.
 
@@ -273,7 +273,7 @@ https://angular.io/cli/generate#component-command
 
 <!-- _class: invert p_left -->
 
-### Servicios
+### 6.4 Servicios
 
 `ng generate service services/MyFirstService --dry-run`
 
@@ -299,7 +299,7 @@ https://angular.io/cli/generate#service-command
 
 <!-- _class: invert p_left -->
 
-### Tuberías
+### 6.5 Tuberías
 
 `ng generate pipe pipes/MyFirstPipe --module my-first-module --dry-run`
 
