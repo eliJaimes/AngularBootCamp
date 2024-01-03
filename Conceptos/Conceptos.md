@@ -242,3 +242,20 @@ Es un tipo especial de directiva que tiene su propia plantilla y estilos.
 &nbsp;
 
 https://angular.io/cli/generate#component-command
+
+---
+
+- **Data binding**, (vinculación de datos): _sincronización automática de los datos_ entre el modelo y la vista.
+  Tenemos dos tipos de _data binding_.
+  https://angular.io/guide/binding-syntax
+  &nbsp;
+  - _Event binding_: manejo de eventos que ocurrieron dentro de la vista de un componente.
+  - _Property binding_: cuando tenemos alguna propiedad en el modelo (la clase) y se desea renderizar el valor en la vista. También se conocer como _one-way binding_.
+  - _Two-way binding_: permite cambiar también el valor de una propiedad desde la vista. Se utiliza una sintaxis llamada _bananas in a box [()]_.
+
+---
+
+|                                                                         |                                                                           |
+| ----------------------------------------------------------------------- | ------------------------------------------------------------------------- |
+| ![width:450px](./Imágenes/Event%20binding.png) &nbsp; Event binding     | ![width:450px](./Imágenes/Property%20binding.png) &nbsp; Property binding |
+| ![width:450px](./Imágenes/Two-way%20binding.png) &nbsp; Two-way binding |
