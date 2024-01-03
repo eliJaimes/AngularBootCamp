@@ -306,3 +306,32 @@ https://angular.io/cli/generate#service-command
 `ng g p pipes/MyFirstPipe -m my-first-module -d`
 
 https://angular.io/cli/generate#pipe-command
+
+---
+
+## 7. Detalles sobre los Módulos en Angular
+
+- Propósito: ayudar a organizar cosas relacionadas juntas, _components_, _directives_, _pipes_.
+- ¿Cómo configurar un NgModule?: se configura al agregar metadatos al decorador _@NgModule_.
+  &nbsp;
+  - _declarations_: se declaran _components_, _directives_, _pipes_ que estarán disponibles dentro de un módulo. Declarations son esos bloques de construcción de Angular que tienen un selector y son usados en la plantilla de un componente.
+  - _imports_: Si el módulo depende de otro módulo, lo podemos importar en esta lista.
+
+---
+
+![width:700px](./Imágenes/Angular%20provider%20example%20fail.png)
+
+This code will not compile
+
+---
+
+- ¿Cómo configurar un NgModule? (continuación)
+  - _exports_: Por default las _declarations_ son privadas para un módulo, si deseamos hacerlas públicas tenemos que agregarlas en el campo _exports_.
+  - _providers_: es el lugar donde se registran diferentes _services_ e _injection tokens_. Se "necesita" para el _dependency injection_.
+  - _bootstrap_: se declaran componentes que se necesitan inicializar en la aplicación, se puede considerar como el _root component_.
+
+---
+
+![width:700px](./Imágenes/Angular%20provider%20example%20success.png)
+
+This code will compile
