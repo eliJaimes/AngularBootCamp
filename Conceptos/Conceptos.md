@@ -140,7 +140,7 @@ Presentan:
 
 <!-- •••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••
 
-	Bloques de Construcción en Angular
+	6. Bloques de Construcción en Angular
 
 ••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••• -->
 
@@ -308,6 +308,12 @@ https://angular.io/cli/generate#service-command
 https://angular.io/cli/generate#pipe-command
 
 ---
+
+<!-- •••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••
+
+	7. Detalles sobre los Módulos en Angular
+
+••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••• -->
 
 ## 7. Detalles sobre los Módulos en Angular
 
