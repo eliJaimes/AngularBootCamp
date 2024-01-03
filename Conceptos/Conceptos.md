@@ -158,9 +158,9 @@ Presentan:
 
 ### Módulos
 
-`ng generate module MyFistModule --module app --routing --dry-run`
+`ng generate module MyFirstModule --module app --routing --dry-run`
 
-`ng g m MyFistModule -m app --routing -d`
+`ng g m MyFirstModule -m app --routing -d`
 
 https://angular.io/cli/generate#module-command
 
@@ -178,9 +178,9 @@ https://angular.io/cli/generate#module-command
 
 ### Directivas
 
-`ng generate directive MyFistDirective --module my-fist-module --dry-run`
+`ng generate directive directives/MyFirstDirective --module my-first-module --dry-run`
 
-`ng g d MyFistDirective -m my-fist-module.module -d`
+`ng g d directives/MyFirstDirective -m my-first-module -d`
 
 https://angular.io/cli/generate#directive-command
 
@@ -218,3 +218,27 @@ Existen 3 tipos de directivas en Angular:
 &nbsp;
 
 ![width:500px](./Imágenes/Lego%20blocks.png)
+
+---
+
+<!-- _class: invert p_left -->
+
+### Componentes
+
+Es un tipo especial de directiva que tiene su propia plantilla y estilos.
+
+&nbsp;
+
+`ng generate component components/MyFirstComponent --module my-first-module --dry-run`
+
+`ng g c components/MyFirstComponent -m my-first-module -d`
+
+&nbsp;
+
+`ng generate component components/MyFirstInlineComponent --module my-first-module --inline-style --inline-template --dry-run`
+
+`ng g c components/MyFirstInlineComponent -m my-first-module.module -s -t -d`
+
+&nbsp;
+
+https://angular.io/cli/generate#component-command

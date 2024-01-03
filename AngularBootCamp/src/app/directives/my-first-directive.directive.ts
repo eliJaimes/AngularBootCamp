@@ -3,8 +3,8 @@
 import { Directive } from '@angular/core';
 
 @Directive({
-  selector: '[appMyFistDirective]',
+  selector: '[appMyFirstDirective]',
 })
-export class MyFistDirectiveDirective {
+export class MyFirstDirectiveDirective {
   public constructor() {}
 }

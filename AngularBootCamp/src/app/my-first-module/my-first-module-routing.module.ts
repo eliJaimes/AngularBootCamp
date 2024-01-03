@@ -9,4 +9,4 @@ const routes: Routes = [];
   exports: [RouterModule],
   imports: [RouterModule.forChild(routes)],
 })
-export class MyFistModuleRoutingModule {}
+export class MyFirstModuleRoutingModule {}

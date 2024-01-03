@@ -3,13 +3,13 @@
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { BrowserModule } from '@angular/platform-browser';
-import { MyFistModuleModule } from './my-fist-module/my-fist-module.module';
+import { MyFirstModuleModule } from './my-first-module/my-first-module.module';
 import { NgModule } from '@angular/core';
 
 @NgModule({
   bootstrap: [AppComponent],
   declarations: [AppComponent],
-  imports: [BrowserModule, AppRoutingModule, MyFistModuleModule],
+  imports: [BrowserModule, AppRoutingModule, MyFirstModuleModule],
   providers: [],
 })
 export class AppModule {}

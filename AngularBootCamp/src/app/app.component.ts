@@ -1,10 +1,11 @@
-import { Component } from '@angular/core';
+/* ••[1]••••••••••••••••••••••••• app.component.ts •••••••••••••••••••••••••••••• */
 
+import { Component } from '@angular/core';
 @Component({
   selector: 'app-root',
+  styleUrl: './app.component.scss',
   templateUrl: './app.component.html',
-  styleUrl: './app.component.scss'
 })
 export class AppComponent {
-  title = 'AngularBootCamp';
+  public title: string = 'AngularBootCamp';
 }
