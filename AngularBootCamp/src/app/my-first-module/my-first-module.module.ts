@@ -6,6 +6,7 @@ import { MyFirstComponentComponent } from '../components/my-first-component/my-f
 import { MyFirstDirectiveDirective } from '../directives/my-first-directive.directive';
 import { MyFirstInlineComponentComponent } from '../components/my-first-inline-component/my-first-inline-component.component';
 import { MyFirstModuleRoutingModule } from './my-first-module-routing.module';
+import { MyFirstPipePipe } from '../pipes/my-first-pipe.pipe';
 import { NgModule } from '@angular/core';
 
 @NgModule({
@@ -13,6 +14,7 @@ import { NgModule } from '@angular/core';
     MyFirstDirectiveDirective,
     MyFirstComponentComponent,
     MyFirstInlineComponentComponent,
+    MyFirstPipePipe,
   ],
   exports: [MyFirstComponentComponent, MyFirstInlineComponentComponent],
   imports: [CommonModule, MyFirstModuleRoutingModule, FormsModule],

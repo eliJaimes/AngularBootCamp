@@ -285,3 +285,24 @@ https://angular.io/cli/generate#service-command
 
 - **Dependency injection**, (Inyección de dependencias): Mecanismo que es responsable de _crear_, _resolver_ y _proporcionar_ dependencias. Se puede inyectar servicios en todas las clases, directivas y otros servicios.
   https://angular.io/guide/architecture-services#dependency-injection-di
+
+---
+
+- **Pipes**, (Tuberías): son clases que se anotan con la anotación _@Pipe_ y su responsabilidad es la transformación de los datos. Se principalmente en las plantillas de un componente y en muchos casos pueden mejorar el rendimiento de la aplicación.
+  https://angular.io/guide/pipes
+
+&nbsp;
+
+![width:700px](./Imágenes/Angular%20Pipe.png)
+
+---
+
+<!-- _class: invert p_left -->
+
+### Tuberías
+
+`ng generate pipe pipes/MyFirstPipe --module my-first-module --dry-run`
+
+`ng g p pipes/MyFirstPipe -m my-first-module -d`
+
+https://angular.io/cli/generate#pipe-command
