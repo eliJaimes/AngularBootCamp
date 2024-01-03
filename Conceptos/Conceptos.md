@@ -280,3 +280,8 @@ https://angular.io/cli/generate#component-command
 `ng g s services/MyFirstService -d`
 
 https://angular.io/cli/generate#service-command
+
+---
+
+- **Dependency injection**, (Inyección de dependencias): Mecanismo que es responsable de _crear_, _resolver_ y _proporcionar_ dependencias. Se puede inyectar servicios en todas las clases, directivas y otros servicios.
+  https://angular.io/guide/architecture-services#dependency-injection-di
