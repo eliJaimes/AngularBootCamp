@@ -414,24 +414,23 @@ https://angular.io/api/core/ElementRef
 
 https://angular.io/guide/lifecycle-hooks
 
-![width:500px](./Imágenes/Angular%20lifecycle-hooks.webp)
+Los métodos del ciclo de vida se pueden clasificar en 2. _Lifecycle hooks_ que se llaman sólo una vez y _Lifecycle hooks_ que se llaman de manera continua.
 
 ---
 
-- **Secuencia de eventos de ciclo de vida**: Angular llamará los métodos hook que se hayan implementado en el punto apropiado en el ciclo de vida de esa instancia.
+- **Secuencia de eventos de ciclo de vida**: Angular llamará automáticamente los métodos (_lifecycle hooks_) que se hayan implementado en el punto apropiado en el ciclo de vida de esa instancia.
   &nbsp;
-  - _ngOnChanges_: ejecutado cuando Angular establece o restablece las propiedades de entrada ligados a datos.
-  - _ngOnInit_: inicializa la directiva o el componente después de que Angular muestra primero las propiedades ligadas a datos y establece las propiedades de entrada.
-  - _ngDoCheck_: detecta y actúa sobre los cambios que Angular no puede o no
-    detectar por sí solo.
-  - _ngAfterContentInit_: ejecutado después de que Angular proyecta contenido externo en la vista del componente, o en la vista en la que se encuentra una directiva.
-  - _ngAfterContentChecked_: ejecutado después de que Angular verifica el contenido proyectado en la directiva o componente.
+  - _ngOnChanges_: llamado cada vez que los _inputs_ del componente o directiva se han actualizado.
+  - _ngOnInit_: llamado una vez cuando el componente o directiva es inicializado. Se recomienda evitarlo.
+  - _ngDoCheck_: llamado cada vez que el mecanismo de _change detection_ se ejecuta.
+  - _ngAfterContentInit_: llamado una vez cuando el contenido proyectado es inicializado (proyectado por _ng-content_).
+  - _ngAfterContentChecked_: llamado cada vez que Angular verifica el contenido proyectado en la directiva o componente.
 
 ---
 
-- _ngAfterViewInit_: ejecutado después de que Angular inicializa las vistas del componente y las vistas de los hijos, o la vista que contiene la directiva.
-- _ngAfterViewChecked_: ejecutado después de que Angular verifica las vistas del componente y las vistas de los hijos, o la vista que contiene la directiva.
-- _ngOnDestroy_: limpieza justo antes de que Angular destruya la directiva o el componente. De suscribe los observables y retira los controladores de eventos para evitar fugas de memoria.
+- _ngAfterViewInit_: llamado una vez cuando la vista de un componente ha sido inicializada.
+- _ngAfterViewChecked_: llamado cada vez que Angular verifica las vistas del componente y las vistas de los hijos, o la vista que contiene la directiva.
+- _ngOnDestroy_: llamado una vez cuando el componente, directiva va a ser destruido. Importante esté método también existe para pipes y módulos.
 
 ---
 
