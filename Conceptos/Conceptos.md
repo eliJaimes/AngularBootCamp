@@ -5,7 +5,7 @@ class: invert
 paginate: true
 footer:
 style: |
-  section { font-size: 26px; } h1, h2, h3 { color: #e90364; text-shadow: 1px 1px 2px black; } ul { text-align: left; width: 100%; font-size: 24px; list-style: none; } li::before { content: "\2022"; color: #d024c3; font-weight: bold; display: inline-block; width: 1em; margin-left: -1em; text-shadow: 1px 1px 2px black;} li { margin-bottom: .5em} em { color: #fd9f29; }	a, strong, h1 strong, h2 strong, h3 strong, h4 strong, h5 strong, h6 strong { color: #8514f5; } a { font-style: italic;} a:hover { color: #8001c6;} section.p_left p { text-align: left; } section.ul_right ul { text-align: right; } section.h6_right h6 { text-align: right; } section.invert { background-color: #0F0F11 } section.title_with_image h1, section.title_with_image h2, section.title_with_image h3 { display: flex; align-items: center; justify-content: center; }
+  section { font-size: 26px; } h1, h2, h3 { color: #e90364; text-shadow: 1px 1px 2px black; } ul { text-align: left; width: 100%; font-size: 24px; list-style: none; } li::before { content: "\2022"; color: #d024c3; font-weight: bold; display: inline-block; width: 1em; margin-left: -1em; text-shadow: 1px 1px 2px black;} li { margin-bottom: .5em} em { color: #fd9f29; }	a, strong, h1 strong, h2 strong, h3 strong, h4 strong, h5 strong, h6 strong { color: #8514f5; } a { font-style: italic;} a:hover { color: #8001c6;} section.p_left p { text-align: left; } section.ul_right ul { text-align: right; } section.h6_right h6 { text-align: right; } section.invert { background-color: #0F0F11 } section.title_with_image h1, section.title_with_image h2, section.title_with_image h3 { display: flex; align-items: center; justify-content: center; } section.img_center p:has(img) { margin: auto; }
 ---
 
 <!-- •••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••
@@ -203,7 +203,7 @@ Existen 3 tipos de directivas en Angular:
 
 ---
 
-- **Structural directives**, (Directivas estructurales): Cambie la estructura DOM agregando y eliminando elementos DOM.
+- **Structural directives**, (Directivas estructurales): Cambian la estructura DOM agregando y eliminando elementos DOM.
   https://angular.io/guide/built-in-directives#built-in-structural-directives
   &nbsp;
   - _NgIf_: Condicionalmente crea o elimina las sub vistas en la plantilla.
@@ -341,3 +341,118 @@ This code will not compile
 ![width:700px](./Imágenes/Angular%20provider%20example%20success.png)
 
 This code will compile
+
+---
+
+<!-- •••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••
+
+	8. Detalles sobre las Directivas en Angular
+
+••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••• -->
+
+## 8. Detalles sobre las Directivas en Angular
+
+<!-- _class: invert p_left -->
+
+- ¿Cómo podemos proveer o vincular datos a una directiva y/o emitir datos?
+
+https://angular.io/api/core/Input#input
+
+https://angular.io/api/core/Output
+
+|                                                                            |                                                                              |
+| -------------------------------------------------------------------------- | ---------------------------------------------------------------------------- |
+| ![width:500px](./Imágenes/Angular%20directive%20example%20input.png) Input | ![width:660px](./Imágenes/Angular%20directive%20example%20output.png) Output |
+
+---
+
+<!-- _class: invert p_left -->
+
+- ¿Qué tipo de selectores podemos usar para una directiva?
+
+https://angular.io/api/core/Directive#selector
+
+|                                                                              |                                                                              |
+| ---------------------------------------------------------------------------- | ---------------------------------------------------------------------------- |
+| ![width:500px](./Imágenes/Angular%20directive%20selectors%20example%201.png) | ![width:575px](./Imágenes/Angular%20directive%20selectors%20example%202.png) |
+
+---
+
+<!-- _class: invert p_left img_center -->
+
+- ¿Cómo podemos escuchar _DOM events_ del elemento donde adjuntamos la directiva?
+
+https://angular.io/api/core/HostListener
+
+![width:700px](./Imágenes/Angular%20directive%20Hostlistener.png)
+
+---
+
+<!-- _class: invert p_left img_center -->
+
+https://angular.io/api/core/Directive#host
+
+https://angular.io/guide/styleguide#hostlistenerhostbinding-decorators-versus-host-metadata
+
+![width:620px](./Imágenes/Angular%20directive%20Host.png)
+
+---
+
+<!-- _class: invert p_left img_center -->
+
+- ¿Cómo obtener una referencia al elemento _host_ de una directiva?
+
+https://angular.io/api/core/ElementRef
+
+![width:800px](./Imágenes/Angular%20directive%20ElementRef.png)
+
+---
+
+<!-- _class: invert p_left img_center -->
+
+- ¿Qué es el _ciclo de vida_ de un componente (directiva)?
+
+https://angular.io/guide/lifecycle-hooks
+
+![width:500px](./Imágenes/Angular%20lifecycle-hooks.webp)
+
+---
+
+- **Secuencia de eventos de ciclo de vida**: Angular llamará los métodos hook que se hayan implementado en el punto apropiado en el ciclo de vida de esa instancia.
+  &nbsp;
+  - _ngOnChanges_: ejecutado cuando Angular establece o restablece las propiedades de entrada ligados a datos.
+  - _ngOnInit_: inicializa la directiva o el componente después de que Angular muestra primero las propiedades ligadas a datos y establece las propiedades de entrada.
+  - _ngDoCheck_: detecta y actúa sobre los cambios que Angular no puede o no
+    detectar por sí solo.
+  - _ngAfterContentInit_: ejecutado después de que Angular proyecta contenido externo en la vista del componente, o en la vista en la que se encuentra una directiva.
+  - _ngAfterContentChecked_: ejecutado después de que Angular verifica el contenido proyectado en la directiva o componente.
+
+---
+
+- _ngAfterViewInit_: ejecutado después de que Angular inicializa las vistas del componente y las vistas de los hijos, o la vista que contiene la directiva.
+- _ngAfterViewChecked_: ejecutado después de que Angular verifica las vistas del componente y las vistas de los hijos, o la vista que contiene la directiva.
+- _ngOnDestroy_: limpieza justo antes de que Angular destruya la directiva o el componente. De suscribe los observables y retira los controladores de eventos para evitar fugas de memoria.
+
+---
+
+![width:1150px](./Imágenes/Angular%20component%20lifecycle.png)
+
+---
+
+<!-- _class: invert p_left img_center -->
+
+- ¿Cómo _referenciar elementos_ en las directivas?
+
+https://angular.io/api/core/ContentChild
+https://angular.io/api/core/ContentChildren
+
+![width:1000px](./Imágenes/Angular%20directive%20ContentChild.png)
+
+---
+
+<!-- _class: invert p_left img_center -->
+
+https://angular.io/api/core/ViewChild
+https://angular.io/api/core/ViewChildren
+
+![width:1100px](./Imágenes/Angular%20directive%20ViewChild.png)
