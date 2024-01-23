@@ -611,6 +611,50 @@ https://www.typescriptlang.org/docs/handbook/utility-types.html
 
 ---
 
+<!-- •••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••
+
+	11. Notas básicas sobre SASS
+
+••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••• -->
+
+## 11. Notas básicas sobre SASS
+
+<!-- _class: invert p_left -->
+
+- **SASS** es un lenguaje de extensión que se compila a CSS. Extiende el CSS puro, y presenta nuevas características como _variables_, _loops_, _funciones_, _mixins_, _models_ entre otras.
+- **SASS** permite hacer los estilos CSS más mantenibles y fáciles de extender.
+- **Angular material** utiliza _scss_ como el lenguaje para sus estilos.
+
+---
+
+### 11.1 _SASS variables_
+
+<!-- _class: invert p_left -->
+
+- Las _SASS variables_ son simples: se asigna un valor a un nombre que comienza con _$_, y luego puede consultar ese nombre en lugar del valor en sí.
+
+https://sass-lang.com/documentation/variables/
+
+|                                                 |                                                            |
+| ----------------------------------------------- | ---------------------------------------------------------- |
+| ![width:500px](./Imágenes/Sass%20variables.png) | ![width:600px](./Imágenes/Sass%20variables%20compiled.png) |
+
+---
+
+### 11.2 _SASS mixins_
+
+<!-- _class: invert p_left -->
+
+- Los _SASS mixins_ permiten definir estilos que se pueden reutilizar en la hoja de estilos.
+
+https://sass-lang.com/documentation/at-rules/mixin/
+
+|                                              |                                                         |
+| -------------------------------------------- | ------------------------------------------------------- |
+| ![width:320px](./Imágenes/Sass%20mixins.png) | ![width:320px](./Imágenes/Sass%20mixins%20compiled.png) |
+
+---
+
 <!-- _class: invert lets_code -->
 
 # Let's code • Part 1
