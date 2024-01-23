@@ -5,7 +5,7 @@ class: invert
 paginate: true
 footer:
 style: |
-  section { font-size: 26px; } h1, h2, h3 { color: #e90364; text-shadow: 1px 1px 2px black; } ul { text-align: left; width: 100%; font-size: 24px; list-style: none; } li::before { content: "\2022"; color: #d024c3; font-weight: bold; display: inline-block; width: 1em; margin-left: -1em; text-shadow: 1px 1px 2px black;} li { margin-bottom: .5em} em { color: #fd9f29; }	a, strong, h1 strong, h2 strong, h3 strong, h4 strong, h5 strong, h6 strong { color: #8514f5; } a { font-style: italic;} a:hover { color: #8001c6;} section.p_left p { text-align: left; } section.ul_right ul { text-align: right; } section.h6_right h6 { text-align: right; } section.invert { background-color: #0F0F11 } section.title_with_image h1, section.title_with_image h2, section.title_with_image h3 { display: flex; align-items: center; justify-content: center; } section.img_center p:has(img) { margin: auto; }
+  section { font-size: 26px; } h1, h2, h3 { color: #e90364; text-shadow: 1px 1px 2px black; } ul { text-align: left; width: 100%; font-size: 24px; list-style: none; } li::before { content: "\2022"; color: #d024c3; font-weight: bold; display: inline-block; width: 1em; margin-left: -1em; text-shadow: 1px 1px 2px black;} li { margin-bottom: .5em} em { color: #fd9f29; }	a, strong, h1 strong, h2 strong, h3 strong, h4 strong, h5 strong, h6 strong { color: #8514f5; } a { font-style: italic;} a:hover { color: #8001c6;} section.p_left p { text-align: left; } section.ul_right ul { text-align: right; } section.h6_right h6 { text-align: right; } section.invert { background-color: #0F0F11 } section.title_with_image h1, section.title_with_image h2, section.title_with_image h3 { display: flex; align-items: center; justify-content: center; } section.img_center p:has(img) { margin: auto; } blockquote { font-size: .75rem; margin: 0 20%; } section.lets_code h1 { color: #43A191;}
 ---
 
 <!-- •••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••
@@ -455,3 +455,74 @@ https://angular.io/api/core/ViewChild
 https://angular.io/api/core/ViewChildren
 
 ![width:1100px](./Imágenes/Angular%20directive%20ViewChild.png)
+
+---
+
+<!-- _class: invert p_left img_center -->
+
+- ¿Cómo distinguir una _directiva estructural_ de una _directiva de atributo_?
+
+https://angular.io/guide/structural-directives
+
+Usualmente inician con un _\*_ frente a su nombre
+
+![width:700px](./Imágenes/Angular%20structural%20directive%20example%201.png)
+
+&nbsp;
+
+El _\*_ es un atajo para la siguiente notación equivalente
+
+https://angular.io/api/core/ng-template
+
+![width:700px](./Imágenes/Angular%20structural%20directive%20example%202.png)
+
+---
+
+<!-- •••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••
+
+	9. Detalles sobre las Pipes en Angular
+
+••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••• -->
+
+## 9. Detalles sobre las Pipes en Angular
+
+<!-- _class: invert p_left img_center -->
+
+&nbsp;
+
+- ¿Cómo utilizar una _pipe_?
+
+![width:800px](./Imágenes/Angular%20pipe%20example.png)
+
+---
+
+<!-- _class: invert p_left img_center -->
+
+Existen 2 tipos de pipes:
+
+- _puras_: ejecutan el método de _transform_ solo cuando la referencia a su valor de entrada se ha cambiado.
+- _impuras_. ejecutan el método de _transform_ cada vez que el mecanismo de _change detection_ se ejecuta.
+
+&nbsp;
+
+> Utilizar un método en la clase del componente para transformar datos es equivalente a una _pipe impura_ lo que reduce el rendimiento de la aplicación.
+
+---
+
+<!-- _class: invert p_left img_center -->
+
+- ¿Qué es la _async pipe_?
+
+https://angular.io/api/common/AsyncPipe
+
+Es una pipe incorporada en Angular que permite suscribirse y de suscribirse automáticamente a _observables_. Funciona con _promesas_ también.
+
+![width:800px](./Imágenes/Angular%20async%20pipe%20example.png)
+
+---
+
+<!-- _class: invert lets_code -->
+
+# Let's code
+
+![width:400px](./Imágenes/Lets%20code.png)
