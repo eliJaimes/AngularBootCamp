@@ -5,7 +5,7 @@ class: invert
 paginate: true
 footer:
 style: |
-  section { font-size: 26px; } h1, h2, h3 { color: #e90364; text-shadow: 1px 1px 2px black; } ul { text-align: left; width: 100%; font-size: 24px; list-style: none; } li::before { content: "\2022"; color: #d024c3; font-weight: bold; display: inline-block; width: 1em; margin-left: -1em; text-shadow: 1px 1px 2px black;} li { margin-bottom: .5em} em { color: #fd9f29; }	a, strong, h1 strong, h2 strong, h3 strong, h4 strong, h5 strong, h6 strong { color: #8514f5; } a { font-style: italic;} a:hover { color: #8001c6;} section.p_left p { text-align: left; } section.ul_right ul { text-align: right; } section.h6_right h6 { text-align: right; } section.invert { background-color: #0F0F11 } section.title_with_image h1, section.title_with_image h2, section.title_with_image h3 { display: flex; align-items: center; justify-content: center; } section.img_center p:has(img) { margin: auto; } blockquote { font-size: .75rem; margin: 0 20%; } section.lets_code h1 { color: #43A191;}
+  section { font-size: 26px; } h1, h2, h3 { color: #e90364; text-shadow: 1px 1px 2px black; } ul { text-align: left; width: 100%; font-size: 24px; list-style: none; } li::before { content: "\2022"; color: #d024c3; font-weight: bold; display: inline-block; width: 1em; margin-left: -1em; text-shadow: 1px 1px 2px black;} li { margin-bottom: .5em} em { color: #fd9f29; }	a, strong, h1 strong, h2 strong, h3 strong, h4 strong, h5 strong, h6 strong { color: #8514f5; } a { font-style: italic; font-size: .75em; } a:hover { color: #8001c6;} section.p_left p { text-align: left; } section.ul_right ul { text-align: right; } section.h6_right h6 { text-align: right; } section.invert { background-color: #0F0F11 } section.title_with_image h1, section.title_with_image h2, section.title_with_image h3 { display: flex; align-items: center; justify-content: center; } section.img_center p:has(img) { margin: auto; } blockquote { font-size: .75rem; margin: 0 20%; } section.lets_code h1 { color: #43A191;}
 ---
 
 <!-- •••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••
@@ -521,8 +521,98 @@ Es una pipe incorporada en Angular que permite suscribirse y de suscribirse auto
 
 ---
 
+<!-- •••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••
+
+	10. Notas básicas sobre Typescript
+
+••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••• -->
+
+## 10. Notas básicas sobre Typescript
+
+<!-- _class: invert p_left -->
+
+- **Typescript** es un _lenguaje de programación_ y una _herramienta de comunicación_, entre desarrollador y la computadora, desarrollador y desarrollador, o uno mismo.
+- **Typescript** es más _descriptivo_ y _preciso_ que JS.
+- **TypeScript** es una **forma de comunicarse** con compañeros de equipo y no necesariamente agrega funcionalidad en tiempo de ejecución.
+- Un **tipo de datos** es una _colección de valores de datos_ y un _conjunto de operaciones predefinidas_ en esos valores.
+- Los **tipos de datos** desaparece cuando _compilamos_ (transpilamos) el código a JS.
+
+&nbsp;
+
+> Use el sistema de tipo TS para expresar claramente la intención del software.
+
+---
+
+<!-- _class: invert p_left -->
+
+### 10.1 _Type_ vs _Interface_
+
+- _type_ es una palabra clave en TypeScript que se utiliza para definir la forma de los datos.
+- _interface_ es una palabra clave que define un contrato al que un objeto debe adherirse.
+
+|                                                       |                                                  |
+| ----------------------------------------------------- | ------------------------------------------------ |
+| ![width:500px](./Imágenes/Typescript%20interface.png) | ![width:480px](./Imágenes/Typescript%20type.png) |
+
+---
+
+<!-- _class: invert p_left img_center -->
+
+### 10.2 Diferencias entre _Type_ e _Interface_
+
+- Podemos crear un _alias type_ para un tipo primitivo (number, string, boolean, null, undefined), pero no podemos crear una interfaz para dar un alias a estos tipos.
+
+![width:400px](./Imágenes/Typescript%20type%20alias.png)
+
+- Los _union types_ nos permiten describir valores que pueden ser uno de varios tipos y crear uniones de varios tipos primitivos, literales o complejos:
+- No hay equivalente a un _union type_ en una _interface_. Pero, es posible crear un nuevo _union type_ a partir de dos _interfaces_,
+
+|                                                           |                                                                              |
+| --------------------------------------------------------- | ---------------------------------------------------------------------------- |
+| ![width:500px](./Imágenes/Typescript%20union%20types.png) | ![width:380px](./Imágenes/Typescript%20union%20type%20from%20interfaces.png) |
+
+---
+
+<!-- _class: invert p_left img_center -->
+
+### 10.3 _Extends_ vs _Intersection_
+
+- Una _interface_ puede extender una o múltiples interfaces. Utilizando la palabra _extends_, una nueva interfaz puede heredar todas las propiedades y métodos de una interfaz existente y al tiempo que agrega nuevas propiedades.
+
+![width:350px](./Imágenes/Typescript%20interface%20extends.png)
+
+- Para lograr un resultado similar para los tipos, necesitamos usar un operador de intersección (_&_):
+
+![width:600px](./Imágenes/Typescript%20type%20intersection.png)
+
+---
+
+<!-- _class: invert p_left img_center -->
+
+### 10.4 _Declaration merging_
+
+- _Declaration merging_ es una característica exclusiva de las interfaces. Con ella, podemos definir una interfaz varias veces, y el compilador TypeScript fusionará automáticamente estas definiciones en una sola definición de interfaz.
+
+![width:320px](./Imágenes/Typescript%20declaration%20merging.png)
+
+- Los _alias type_ no se pueden fusionar de la misma manera. Si intenta definir el mismo tipo más de una vez, se emitirá un error.
+
+---
+
+<!-- _class: invert p_left img_center -->
+
+### 10.5 _Utility types_
+
+- **TypeScript** proporciona varios _utility types_ para facilitar las transformaciones de tipo comunes. Estas utilidades están disponibles a nivel global.
+
+https://www.typescriptlang.org/docs/handbook/utility-types.html
+
+![width:800px](./Imágenes/Typescript%20utility%20types.png)
+
+---
+
 <!-- _class: invert lets_code -->
 
-# Let's code
+# Let's code • Part 1
 
 ![width:400px](./Imágenes/Lets%20code.png)
