@@ -625,6 +625,8 @@ https://www.typescriptlang.org/docs/handbook/utility-types.html
 - **SASS** permite hacer los estilos CSS más mantenibles y fáciles de extender.
 - **Angular material** utiliza _scss_ como el lenguaje para sus estilos.
 
+https://sass-lang.com
+
 ---
 
 ### 11.1 _SASS variables_
@@ -660,3 +662,66 @@ https://sass-lang.com/documentation/at-rules/mixin/
 # Let's code • Part 1
 
 ![width:400px](./Imágenes/Lets%20code.png)
+
+---
+
+<!-- •••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••
+
+	12. Notas básicas sobre RxJs
+
+••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••• -->
+
+## 12. Notas básicas sobre RxJs
+
+<!-- _class: invert p_left -->
+
+- **Rxjs** es una biblioteca para crear programas _asíncronos_, basados en _eventos_ mediante el uso de secuencias _observables_
+- **RXJS** es poderoso gracias a su capacidad para producir valores utilizando _funciones puras_.
+- **RxJs** son _extensiones reactivas_ para JavaScript.
+
+> Una **función pura** es aquella que, dada una _misma entrada_, siempre regresa el _mismo valor de salida_ sin producir efectos secundarios.
+
+&nbsp;
+
+https://rxjs.dev/
+
+---
+
+<!-- _class: invert p_left -->
+
+### 12.1 ¿Porqué usar _RxJs_?
+
+Nos permite observar y reaccionar a los datos a medida que fluyen a través del tiempo.
+
+&nbsp;
+
+- **Emitir** elementos
+- **Reaccionar** a cada elemento emitido
+  - Transformar
+  - Filtrar
+  - Modificar
+- **Combinar**
+- **Cache**
+
+---
+
+- **RxJs** proporciona una sola técnica para trabajar con cualquier tipo de datos (eventos del teclado, mouse, datos de arreglos, archivos o una API), podemos trabajar con diferentes fuentes utilizando _las mismas técnicas y operadores_.
+- Se puede _componer_ información fácilmente a partir de diversas fuentes.
+- **RxJs** puede _producir múltiples valores_ en el tiempo y utiliza un modelo _push_ para notificar cuando ocurren acciones específicas, lo que facilita reaccionar a las interacciones del usuario o cambios en los datos.
+- **RxJs** es _perezoso_, una evaluación no comienza hasta la _suscripción_, por lo que podemos crear recetas que solo se ejecutan cuando necesitamos el resultado.
+- **RxJs** tiene _manejo de errores_ incorporado.
+- Con **RxJs** podemos cancelar acciones asíncronas.
+
+---
+
+### 12.2 ¿Porqué surge _RxJs_?
+
+- En **RxJs** todo gira alrededor de los _observables_.
+- Un _observable_ representa la idea de una colección invocable de _valores_ o _eventos futuros_.
+- Los observables son **lazy push collections** de múltiples valores. Llenan el lugar que falta en la siguiente tabla:
+
+![width:550px](./Imágenes/Pull%20Push%20Single%20Multiple.jpg)
+
+---
+
+### 12.3 _RxJs_ en la vida real
