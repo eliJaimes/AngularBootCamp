@@ -5,7 +5,7 @@ class: invert
 paginate: true
 footer:
 style: |
-  section { font-size: 26px; } h1, h2, h3 { color: #e90364; text-shadow: 1px 1px 2px black; } ul { text-align: left; width: 100%; font-size: 24px; list-style: none; } li::before { content: "\2022"; color: #d024c3; font-weight: bold; display: inline-block; width: 1em; margin-left: -1em; text-shadow: 1px 1px 2px black;} li { margin-bottom: .5em} em { color: #fd9f29; }	a, strong, h1 strong, h2 strong, h3 strong, h4 strong, h5 strong, h6 strong { color: #8514f5; } a { font-style: italic; font-size: .75em; } a:hover { color: #8001c6;} section.p_left p { text-align: left; } section.ul_right ul { text-align: right; } section.h6_right h6 { text-align: right; } section.invert { background-color: #0F0F11 } section.title_with_image h1, section.title_with_image h2, section.title_with_image h3 { display: flex; align-items: center; justify-content: center; } section.img_center p:has(img) { margin: auto; } blockquote { font-size: .75rem; margin: 0 20%; } section.lets_code h1 { color: #43A191;}
+  section { font-size: 26px; } h1, h2, h3 { color: #e90364; text-shadow: 1px 1px 2px black; } ul { text-align: left; width: 100%; font-size: 24px; list-style: none; } li::before { content: "\2022"; color: #d024c3; font-weight: bold; display: inline-block; width: 1em; margin-left: -1em; text-shadow: 1px 1px 2px black;} li { margin-bottom: .5em} em { color: #fd9f29; }	a, strong, h1 strong, h2 strong, h3 strong, h4 strong, h5 strong, h6 strong { color: #8514f5; } a { font-style: italic; font-size: .75em; } a:hover { color: #8001c6;} section.p_left p { text-align: left; } section.ul_right ul { text-align: right; } section.h6_right h6 { text-align: right; } section.invert { background-color: #0F0F11 } section.title_with_image h1, section.title_with_image h2, section.title_with_image h3 { display: flex; align-items: center; justify-content: center; } section.img_center p:has(img) { margin: auto; } blockquote { font-size: .75rem; margin: 0 20%; } section.lets_code h1 { color: #43A191;} img { border-radius: .3em;}
 ---
 
 <!-- •••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••
@@ -719,9 +719,68 @@ Nos permite observar y reaccionar a los datos a medida que fluyen a través del 
 - En **RxJs** todo gira alrededor de los _observables_.
 - Un _observable_ representa la idea de una colección invocable de _valores_ o _eventos futuros_.
 - Los observables son **lazy push collections** de múltiples valores. Llenan el lugar que falta en la siguiente tabla:
+  &nbsp;
 
-![width:550px](./Imágenes/Pull%20Push%20Single%20Multiple.jpg)
+![width:500px](./Imágenes/Pull%20Push%20Single%20Multiple.jpg)
 
 ---
 
 ### 12.3 _RxJs_ en la vida real
+
+- Los _streams_ de datos son equiparables a las _tuberías de agua_ en una casa.
+- Todo comienza con la instalación de tuberías de agua, que por si mismas no hacen nada, solo existen, como bytes de agua en una casa. El agua podría representar datos dentro de un _stream_ en **RxJs**.
+
+|                                                   |                                                          |
+| ------------------------------------------------- | -------------------------------------------------------- |
+| ![width:400px](./Imágenes/RxJs%20analogy%201.jpg) | ![width:600px](./Imágenes/RxJs%20analogy%201%20code.png) |
+
+---
+
+- ¿Qué pasa si queremos consumir agua? En la vida real debemos abrir la llave.
+- En el mundo de **RxJs** esto sería el equivalente a _subscribe_.
+
+|                                                   |                                                          |
+| ------------------------------------------------- | -------------------------------------------------------- |
+| ![width:500px](./Imágenes/RxJs%20analogy%202.jpg) | ![width:650px](./Imágenes/RxJs%20analogy%202%20code.png) |
+
+- Esta es la razón por la que siempre debemos _de suscribirnos_ de un steam si ya no lo vamos a utilizar. El equivalente sería dejar la llave del agua abierta, en **RxJs** representaría una fuga de memoria.
+
+---
+
+<!-- _class: invert img_center -->
+
+&nbsp;
+&nbsp;
+
+> Siempre _de suscribirse_ cuando ya no se utilice un _stream_.
+
+![width:1000px](./Imágenes/RxJs%20analogy%203%20code.png)
+
+---
+
+- Continuando con la analogía, si la calidad de nuestra agua no es buena necesitaremos filtrarla.
+- En **RxJs** podemos hacer uso de diversos _operadores_ para _filtrar_, _transformar_ o _modificar_ nuestro stream.
+
+|                                                   |                                                          |
+| ------------------------------------------------- | -------------------------------------------------------- |
+| ![width:500px](./Imágenes/RxJs%20analogy%203.jpg) | ![width:650px](./Imágenes/RxJs%20analogy%204%20code.png) |
+
+---
+
+- Así mismo, si deseamos agua caliente debemos transformar el agua fría en agua caliente.
+- En **RxJs** nuevamente utilizaríamos un _operador_, en este caso un operador que transforme nuestro stream.
+
+|                                                   |                                                          |
+| ------------------------------------------------- | -------------------------------------------------------- |
+| ![width:350px](./Imágenes/RxJs%20analogy%204.jpg) | ![width:700px](./Imágenes/RxJs%20analogy%205%20code.png) |
+
+---
+
+<!-- _class: invert img_center -->
+
+- Podemos combinar tantos _operadores_ como se necesiten para alterar nuestros _streams_.
+
+![width:400px](./Imágenes/RxJs%20analogy%205.jpg)
+&nbsp;
+
+![width:800px](./Imágenes/RxJs%20analogy%206%20code.png)
