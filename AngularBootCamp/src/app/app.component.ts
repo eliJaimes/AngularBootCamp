@@ -11,22 +11,11 @@
 //   public title: string = 'AngularBootCamp';
 // }
 
-import { filter, map } from 'rxjs/operators';
-import { Observable, of, Subscription } from 'rxjs';
+import { Subscription } from 'rxjs';
 
-const warmUp: (water: string) => string = (water: string): string =>
-  `${water}-warm`;
-
-const stream$: Observable<string> = of('water');
-
-const waterSubscription$: Subscription = stream$
-  .pipe(
-    filter((water: string): boolean => water === 'water'),
-    map((water: string): string => warmUp(water)),
-  )
-  .subscribe((water: string): void => console.log('Take a shower', water));
-
-waterSubscription$.unsubscribe();
-
-// .pipe(filter((water: string): boolean => water === 'water'))
-// filter
+const subscription: Subscription = observable$.subscribe({
+  complete: (): void => console.log('✅ - Done'),
+  error: (error: Error): void =>
+    console.error('❌ - Something wrong occurred: %O', error),
+  next: (value: unknown): void => console.log('✔️ - Got value %O', value),
+});

@@ -5,7 +5,7 @@ class: invert
 paginate: true
 footer:
 style: |
-  section { font-size: 26px; } h1, h2, h3 { color: #e90364; text-shadow: 1px 1px 2px black; } ul { text-align: left; width: 100%; font-size: 24px; list-style: none; } li::before { content: "\2022"; color: #d024c3; font-weight: bold; display: inline-block; width: 1em; margin-left: -1em; text-shadow: 1px 1px 2px black;} li { margin-bottom: .5em} em { color: #fd9f29; }	a, strong, h1 strong, h2 strong, h3 strong, h4 strong, h5 strong, h6 strong { color: #8514f5; } a { font-style: italic; font-size: .75em; } a:hover { color: #8001c6;} section.p_left p { text-align: left; } section.ul_right ul { text-align: right; } section.h6_right h6 { text-align: right; } section.invert { background-color: #0F0F11 } section.title_with_image h1, section.title_with_image h2, section.title_with_image h3 { display: flex; align-items: center; justify-content: center; } section.img_center p:has(img) { margin: auto; } blockquote { font-size: .75rem; margin: 0 20%; } section.lets_code h1 { color: #43A191;} img { border-radius: .3em;}
+  section { font-size: 26px; } h1, h2, h3, h4, h5, h6 { color: #e90364; text-shadow: 1px 1px 2px black; } ul { text-align: left; width: 100%; font-size: 24px; list-style: none; } li::before { content: "\2022"; color: #d024c3; font-weight: bold; display: inline-block; width: 1em; margin-left: -1em; text-shadow: 1px 1px 2px black;} li { margin-bottom: .5em} em { color: #fd9f29; }	a, strong, h1 strong, h2 strong, h3 strong, h4 strong, h5 strong, h6 strong { color: #8514f5; } a { font-style: italic; font-size: .75em; } a:hover { color: #8001c6;} section.p_left p { text-align: left; } section.ul_right ul { text-align: right; } section.h6_right h6 { text-align: right; } section.invert { background-color: #0F0F11 } section.title_with_image h1, section.title_with_image h2, section.title_with_image h3 { display: flex; align-items: center; justify-content: center; } section.img_center p:has(img) { margin: auto; } blockquote { font-size: .75rem; margin: 0 20%; } section.lets_code h1 { color: #43A191;} img { border-radius: .3em;}
 ---
 
 <!-- •••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••
@@ -784,3 +784,333 @@ Nos permite observar y reaccionar a los datos a medida que fluyen a través del 
 &nbsp;
 
 ![width:800px](./Imágenes/RxJs%20analogy%206%20code.png)
+
+---
+
+### 12.4 Conceptos y entidades en _RxJs_
+
+---
+
+#### 12.4.1 Streams
+
+- Los elementos en un **stream** pueden venir en varios puntos de tiempo.
+
+|                                                    |                                                 |
+| -------------------------------------------------- | ----------------------------------------------- |
+| Timeline                                           | Mouse events                                    |
+| ![width:400px](./Imágenes/Timeline.jpg)            | ![width:400px](./Imágenes/Mouse%20position.jpg) |
+| Input events                                       | HTTP request                                    |
+| ![width:400px](./Imágenes/Text%20input%20data.jpg) | ![width:400px](./Imágenes/HTTP%20response.jpg)  |
+
+---
+
+#### 12.4.2 Marble diagrams
+
+- Permiten visualizar valores emitidos a través del tiempo.
+
+|                                                     |                                                        |
+| --------------------------------------------------- | ------------------------------------------------------ |
+| Next notification                                   | Complete notification                                  |
+| ![width:400px](./Imágenes/Next%20notification.jpg)  | ![width:400px](./Imágenes/Complete%20notification.jpg) |
+| Error notification                                  | Summary                                                |
+| ![width:400px](./Imágenes/Error%20notification.jpg) | ![width:400px](./Imágenes/Notifications%20summary.jpg) |
+
+---
+
+#### 12.4.3 Observer
+
+- Un **observer** es un objeto que observa y responde a notificaciones especificadas como métodos. _next()_ para manejar el siguiente dato emitido, _error()_ para manejar una condición de error y _complete()_ para manejar un procesamiento final o limpieza.
+- **Observer**: Una colección de _callbacks_ que saben escuchar los valores entregados por un _observable_.
+- **Observer**: es un consumidor de valores entregados por un _observable_.
+- En **RxJs**, un **observer** es definido como una interfaz con métodos _next()_, _error()_ y _complete()_.
+
+![width:900px](./Imágenes/RxJs%20observer.png)
+
+---
+
+#### 12.4.4 Subscriber
+
+- Internamente **RxJs** cada _observer_ es convertido en un **subscriber**.
+- Un **subscriber** es básicamente un _observer_ con características adicionales para _de subscribirse_ de un _observable_.
+
+---
+
+#### 12.4.5 Observable
+
+- **Observable**: una colección de eventos o valores emitidos en el tiempo.
+- Un **observable** puede ser _síncrono_ o _asíncrono_, emitir valores _finitos_ o _infinitos_.
+- Podemos operar los valores emitidos con métodos (map, filter, concat). Dado que los valores se emiten a través del tiempo podemos aplicar operadores basados en el tiempo (delay, timeout).
+
+![width:800px](./Imágenes/RxJs%20observable.png)
+
+---
+
+![width:700px](./Imágenes/Time%20interval%20counter.jpg)
+
+![width:700px](./Imágenes/Mouse%20text%20click%20events.jpg)
+
+---
+
+#### 12.4.6 Subscription
+
+- En **RxJs** llamamos al método _subscribe()_ en un _observable_ para comenzar a recibir notificaciones.
+- El método _subscribe()_ recibe un _observer_ para saber a dónde enviar las notificaciones.
+- Si no nos _subscribimos_ no recibiremos las notificaciones (comportamiento lazy).
+
+![width:1100px](./Imágenes/RxJs%20subscription.png)
+
+---
+
+#### 12.4.7 Subjects
+
+- Un **Subject** es una combinación de un _observable_ y un _observer_.
+- Por tanto nos podemos _subscribir_ a un **Subject** al igual que lo hacemos con los _observables_.
+- Y también podemos utilizar y emitir las notificaciones de _next_, _error_ y _complete_ en el **Subject**, lo que provocará un _multicast_ de estas notificaciones a todas las _suscripciones_ activas.
+
+---
+
+![width:1100px](./Imágenes/Subject.jpg)
+
+---
+
+##### 12.4.7.1 Behavior subject
+
+- Un **Behavior subject** es una extensión menor pero importante de un _subject_.
+- En un **Behavior subject**, cada vez que una nueva suscripción se crea, recibirá una notificación con el último valor emitido.
+- Un **Behavior subject** almacena el último valor emitido en memoria.
+- Es por tanto que requiere un valor inicial durante su creación.
+
+---
+
+![width:1100px](./Imágenes/BehaviorSubject.jpg)
+
+---
+
+#### 12.4.8 Operadores en RxJs
+
+- Los **operadores** son las piezas esenciales que permiten componer de manera fácil y declarativa código asíncrono complejo.
+- Los **operators** son funciones.
+- Existen dos tipos de **operadores** _de creación_ y _conectables_.
+
+---
+
+##### 12.4.8.1 Creation operators
+
+- Crear los observables desde 0 no es la mejor manera de utilizarlos.
+- **RxJs** cuenta con un amplio conjunto de _funciones de creación_.
+- Una **creation function (o creation operator)** es una manera sencilla de crear un _observable_ con un comportamiento popular.
+
+---
+
+- _ajax_: permite crear observables que realizan llamadas HTTP.
+- _of_: emite los valores proporcionados como argumentos y se completa.
+- _from_: convierte cosas como arreglos, promesas, iterables en un observable.
+- _fromEvent_: crea un observable a partir de algún objetivo. Suscribirse y cancelar la suscripción funciona aquí como 'addEventListener' y 'removeEventListener'.
+- _interval_: genera un observable que emite notificaciones en intervalos.
+- _forkJoin_: Acepta una arreglo de observables como entrada. Después de completarse todos estos observables, emite un conjunto de los últimos valores emitidos por cada uno de ellos. Muy útil si necesita esperar por el resultado de un par de llamadas HTTP.
+- _combineLatest_: También acepta múltiples observables como entrada. Cada vez que cualquiera de ellos emite algo nuevo, un conjunto combinado de los últimos valores se emitirá como un arreglo.
+
+---
+
+###### 12.4.8.1.1 forkJoin
+
+- Acepta una arreglo de observables como entrada. _Después de completarse todos estos observables_, emite un conjunto de los últimos valores emitidos por cada uno de ellos.
+- Muy útil si necesita esperar por el resultado de varias llamadas HTTP.
+
+![width:550px](./Imágenes/forkJoin.png)
+
+---
+
+|                                          |                                          |
+| ---------------------------------------- | ---------------------------------------- |
+| ![width:550px](./Imágenes/forkJoin2.jpg) | ![width:550px](./Imágenes/forkJoin3.jpg) |
+| ![width:550px](./Imágenes/forkJoin4.jpg) |                                          |
+
+---
+
+###### 12.4.8.1.2 combineLatest
+
+- También acepta múltiples observables como entrada. Cada vez que cualquiera de ellos emite algo nuevo, un conjunto combinado de los últimos valores se emitirá como un arreglo.
+
+![width:650px](./Imágenes/combineLatest.png)
+
+---
+
+![width:800px](./Imágenes/combineLatest2.jpg)
+
+![width:800px](./Imágenes/combineLatest3.jpg)
+
+---
+
+##### 12.4.8.2 Pipeable operators
+
+- Son una de las características más poderosas de **RXJS**.
+- Nos permiten _transformar_ notificaciones enviadas por un observable de innumerables maneras.
+- Nos permite _escribir lógica asíncrona compleja_ con solo unas pocas líneas de código, lo que facilita la lectura y el trabajo.
+
+---
+
+- _filter_: Es similar al operador 'filter' en arreglos de JavaScript, la idea general es la misma. Sin embargo, en lugar de filtrar los elementos en el arreglo, el operador 'filter' filtra los valores emitidos y los pasa a través o no.
+- _map_: Es la contraparte en el mundo de streams del operador 'map' de los arreglos en JavaScript. Este operador toma el valor emitido y puede transformarlo en algún otro valor. Útil para extraer una propiedad anidada dentro de un objeto más complejo.
+- _tap_: Nos permite causar efectos secundarios sin cambiar las notificaciones. Útil para fines de depuración y aprendizaje.Podemos usarlo para registrar los valores emitidos en cualquier etapa de la tubería de operadores si utilizamos múltiples operadores apilados.
+- _debounceTime_: Es útil si la fuente observable emite muchos valores y luego se establece. Esto a menudo se utiliza con las entradas que produce del usuario. Un ejemplo puede ser un escenario en el que el usuario escriba algún valor en un campo de entrada y un valor se re calcula consumiendo tiempo considerable y recursos por cada pulsación de las teclas.
+- _catchError_: Cuando la fuente observable presenta una notificación de error, este operador no pasará este error, sino que usará el observable 'fallback' proporcionado como la nueva fuente.
+
+---
+
+##### 12.4.8.3 Flattening operators
+
+###### 12.4.8.3.1 Higher-Order Observables
+
+- Los _observables_ comúnmente emiten valores ordinarios como cadenas y números, pero muy a menudo, es necesario manejar _observables de observables_, llamados **observables de orden superior (Higher-Order Observables)**.
+- ¿Cómo trabaja con un **observable de orden superior**? Típicamente, aplanándose: convirtiendo un **observable de orden superior** en un observable ordinario.
+
+---
+
+###### 12.4.8.3.2 Flattening operators
+
+- Un **flattening operator** se subscribe internamente a un _observable_, emitiendo cada valor de una notificación _next_ de sus suscripciones a la salida.
+- Mientras la fuente _observable_ siga emitiendo valores, el **flattening operator** seguirá suscribiéndose al observable proporcionado para cada valor.
+- Si la fuente emite una notificación de _error_ o _complete_, éstas se emitirán a la salida.
+
+![width:650px](./Imágenes/flatteningOperators1.jpg)
+
+---
+
+- Existen diversos tipos de **flattening operators**, difieren entre ellos en _cómo manejan la concurrencia_.
+
+![width:450px](./Imágenes/flatteningOperators2.jpg)
+
+- **Flattening** en el nombre de estos operadores hace referencia a que durante el curso de la suscripción externa, el operador _crea las suscripciones internas_ y todos los valores emitidos por esas suscripciones son aplanados en una sola salida.
+
+---
+
+###### 12.4.8.3.2.1 concatMap
+
+- Proyecta cada valor de una fuente **observable** que se fusiona con el **observable** de salida, de manera serializada esperando que cada uno complete antes de fusionar el siguiente.
+
+![width:550px](./Imágenes/concatMap0.png)
+
+---
+
+![width:700px](./Imágenes/concatMap1.jpg)
+
+![width:700px](./Imágenes/concatMap2.jpg)
+
+---
+
+![width:950px](./Imágenes/concatMap3.jpg)
+
+---
+
+- En un **flattening operator** las notificaciones de error son re emitidas al **observable** de salida. Esto es importante porque el error podría detener nuestra suscripción externa dejando de funcionar.
+- Si una notificación de _error_ o _complete_ se emite por parte del **observable** interno, el **flattening operator** se de suscribirá del mismo porque ya no es relevante.
+
+![width:750px](./Imágenes/concatMap4.jpg)
+
+---
+
+- Si queremos controlar el error podemos usar un operador _catchError_. La salida de error del _concatMap_ será la entrada del _catchError_, quien a su vez lo podría reemplazar con un **observable** vació o una salida controlada.
+
+![width:900px](./Imágenes/concatMap5.jpg)
+
+---
+
+![width:950px](./Imágenes/concatMap6.jpg)
+
+---
+
+- _concatMap_ esperará y no emitirá nuevos valores hasta que finalice la suscripción anterior. Y si nunca termina se quedaría atascado en el manejo de ese **observable**.
+- Dadas estas condiciones es el operador más seguro al utilizar al dificultar cometer errores al dejar suscripciones activas no utilizadas, ya que si un **observable** no se completa lo notaríamos inmediatamente ya que el operador no reaccionaría al resto de los valores emitidos por la fuente.
+
+![width:750px](./Imágenes/concatMap7.jpg)
+
+---
+
+- Una ventaja muy importante del operador _concatMap_ es que espera a que la suscripción anterior finalice antes de manejar la siguiente. En otras palabras, garantiza que todos los valores entrantes se manejen uno tras otro.
+
+![width:900px](./Imágenes/concatMap8.jpg)
+
+---
+
+###### 12.4.8.3.2.2 switchMap
+
+- Proyecta cada valor de una fuente **observable** que se fusiona con el **observable** de salida, emitiendo valores solo del **observable** proyectado más recientemente.
+
+![width:550px](./Imágenes/switchMap0.png)
+
+- El operador _concatMap_ esperaba que la suscripción actual terminara para terminar el cambio de suscripción, _switchMap_ por el contrario simplemente cancela la suscripción anterior e inmediatamente comienza una nueva.
+
+---
+
+![width:650px](./Imágenes/switchMap1.jpg)
+
+![width:650px](./Imágenes/switchMap2.jpg)
+
+---
+
+- Si no estamos interesados en esperar a que finalice la suscripción anterior y nos gustaría comenzar una nueva lo más rápido posible, _switchMap_ es una buena opción.
+- Sin embargo, debemos tener cuidado con una detalle importante al realizar una solicitud HTTP para almacenar datos en el servidor. Podemos iniciar una solicitud HTTP por medio de _switchMap_ e inmediatamente realizar otras más. La solicitud posiblemente ya se haya enviado y llegará al servidor de todos modos, por lo que la des suscripción no garantiza que las solicitudes no lleguen al servidor ni tampoco el orden en que las peticiones llegan. Por lo tanto al guardar datos en el servidor usando _switchMap_ el resultado puede ser impredecible.
+- _switchMap_ es muy útil sin embargo si deseamos obtener algo del servidor y solo nos interesa la última respuesta enviada (_type ahead_).
+
+---
+
+###### 12.4.8.3.2.3 mergeMap
+
+- Proyecta cada valor de una fuente **observable** que se fusiona con el **observable** de salida.
+
+![width:500px](./Imágenes/mergeMap0.png)
+
+- _mergeMap_ emite los valores al **observable** de salida siempre que alguna de las suscripciones internas recibe algún valor, el orden no se maneja aquí de ninguna manera, todo es instantáneo y concurrente.
+
+---
+
+![width:650px](./Imágenes/mergeMap1.jpg)
+
+![width:650px](./Imágenes/mergeMap2.jpg)
+
+---
+
+- _mergeMap_ es el operador que más fácilmente puede presentar fugas de memoria si no tenemos cuidado de verificar que los **observables** internos emiten una notificación de _complete_, dado que cada valor emitido por el observable fuente genera un nueva subscription a un observable interno.
+- Si lo utilizamos para enviar solicitudes HTTP, debemos tener en cuenta que el orden no se garantiza, tanto de nuestro lado como del lado del servidor.
+
+---
+
+![width:950px](./Imágenes/flatteningOperators3.jpg)
+
+---
+
+###### 12.4.8.3.2.4 exhaustMap
+
+- Proyecta cada valor de una fuente **observable** que se fusiona con el **observable** de salida, solo si se ha completado el **observable** proyectado anterior.
+
+![width:700px](./Imágenes/exhaustMap0.png)
+
+---
+
+![width:900px](./Imágenes/exhaustMap1.jpg)
+
+---
+
+#### 12.4.9 ¿Qué es el desarrollo reactivo?
+
+- El paradigma declarativo se encarga de los _flujos de datos_ y la _propagación de los cambios_.
+- El código es **reactivo** cuando un _cambio_ en alguna _entrada_ conduce a un _cambio automático_ en la _salida_.
+
+---
+
+Volverse reactivo significa:
+
+- Dejar atrás los _patrones procedurales_.
+- _Trabajar con observables directamente_, en lugar de leer datos en un arreglo y después vincular a ese arreglo, utilizaremos y vincularemos observables
+- Crear _observable pipelines_ que reaccionen a datos emitidos, mientras que utilizamos los operadores disponibles en RxJs
+- _Transformar_, _componer_ y _combinar_ observables para manejar múltiples fuentes de datos
+- Definir _action streams_ para fácilmente reaccionar a las acciones del usuario
+
+---
+
+<!-- _class: invert lets_code -->
+
+# Let's code • Part 2
+
+![width:400px](./Imágenes/Lets%20code.png)
