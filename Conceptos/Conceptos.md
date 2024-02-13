@@ -1114,3 +1114,102 @@ Volverse reactivo significa:
 # Let's code • Part 2
 
 ![width:400px](./Imágenes/Lets%20code.png)
+
+---
+
+<!-- •••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••
+
+	13. Angular Routing
+
+••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••• -->
+
+## 13. Angular Routing
+
+- Hemos usado _directivas_ para renderizar diferentes porciones de una página.
+- ¿Qué debemos hacer si queremos renderizar diferentes páginas y navegar entre ellas?
+- Angular provee su propio _Router_ y múltiples mecanismos para la navegación.
+- El efecto que conseguiremos es presentar sistemas completos, compuestos de múltiples secciones y páginas mientras seguimos en el contexto de una _SPA (Single Page Application)_.
+- https://angular.io/guide/developer-guide-overview
+
+---
+
+- En este ejercicio se presentaran diversos conceptos del _Angular Router_ como:
+  - Organizar la aplicación en _módulos_
+  - _Navegación_ a un componente
+  - _Paso de parámetros_
+  - _Rutas anidadas_
+  - Manejo de _guards_
+  - _Lazy loading_
+
+Nota: Para este ejercicio utilizaremos componentes de **Angular Material**.
+
+---
+
+<!-- •••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••
+
+	14. Angular Material
+
+••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••• -->
+
+## 14. Angular Material
+
+- **Angular Material** ofrece una amplia variedad de componentes de interfaz de usuario basados en la especificación de -Material Design\_.
+- https://material.angular.io/
+
+---
+
+<!-- _class: invert lets_code -->
+
+# Let's code • Part 3
+
+![width:400px](./Imágenes/Lets%20code.png)
+
+---
+
+<!-- •••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••
+
+	15. Angular Forms
+
+••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••• -->
+
+## 15. Angular Forms
+
+- En **Angular** existen 2 mecanismos principales para desarrollar formularios:
+  &nbsp;
+  - _Template-driven forms_: Depende de directivas en la plantilla para crear y manipular el modelo objeto del formulario. https://angular.io/guide/forms
+    &nbsp;
+  - _Reactive forms_: Proporciona acceso directo y explícito al modelo objeto del formulario. https://angular.io/guide/forms-overview
+
+---
+
+<!-- •••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••
+
+	16. TailwindCSS
+
+••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••• -->
+
+## 16. TailwindCSS
+
+- **TailwindCSS** es un _'utility-first framework'_ en CSS, que aporta un conjunto de clases, con las cuales se puede hacer composición para construir cualquier diseño, directamente desde la vista.
+  &nbsp;
+- https://tailwindcss.com/
+  &nbsp;
+- Tailwind CSS IntelliSense, https://marketplace.visualstudio.com/items?itemName=bradlc.vscode-tailwindcss
+  &nbsp;
+- Tailwind Docs, https://marketplace.visualstudio.com/items?itemName=austenc.tailwind-docs
+
+---
+
+<!-- _class: invert lets_code -->
+
+# Let's code • Part 4
+
+![width:400px](./Imágenes/Lets%20code.png)
+
+---
+
+# GRACIAS
+
+---
+
+![width:400px](./Imágenes/Medalla.png)
